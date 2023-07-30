@@ -1,0 +1,20 @@
+package fundamentos;
+
+public class TipoString {
+	public static void main(String[] args) {
+		System.out.println("Olá pessoal".charAt(2));
+//		aqui eu estou acessando o valor da poição 2
+		
+		String s = "Boa tarde";
+		System.out.println(s.concat("!!!")); // aqui está concatenando
+		System.out.println(s + "!!!");  // aqui tambpem está sendo concatenado
+		System.out.println(s.startsWith("Boa"));  // aqui está verificando se a string 
+//		começa com a palavra passada como parametro
+		System.out.println(s.toLowerCase().startsWith("boa"));  // aqui estou colocando
+//		os caracteres em minusculos e fazendo uma verificação
+		System.out.println(s.toUpperCase().endsWith("TARDE")); // aqui eu estou colocando
+//		os caracteres em maiusculos e verificando se o final termina com TARDE
+		System.out.println(s.length());  // verificando o tamanho da string
+	}
+
+}

@@ -1,0 +1,17 @@
+package fundamentos;
+
+public class Console {
+
+	public static void main(String[] args) {
+		System.out.println("Boa");
+		System.out.println("noite\n\n");
+
+//		o print terminado em ln quebra a linha ao imprimir 
+		System.out.println("Boa");
+		System.out.println("noite");
+
+		System.out.printf("Megasena: %d %d %d %d %d %d", 1, 2, 3, 4, 5, 6);
+		System.out.printf("Salario: %.1f%n", 1234.5678);
+	}
+
+}

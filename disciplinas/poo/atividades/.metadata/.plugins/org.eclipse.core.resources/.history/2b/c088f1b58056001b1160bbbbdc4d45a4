@@ -1,0 +1,16 @@
+package fundamentos;
+
+public class ConcersaoTipoPrimitivoNumerico {
+	public static void main(String[] args) {
+		
+		double a = 1;
+		System.out.println(a);
+		
+		float b = (float) 1.12345678888888; // aqui eu convertir 1.0 manualmente para float pq
+//		o literal 1.0 é do tipo double
+		System.out.println(b);
+		
+		
+	}
+
+}

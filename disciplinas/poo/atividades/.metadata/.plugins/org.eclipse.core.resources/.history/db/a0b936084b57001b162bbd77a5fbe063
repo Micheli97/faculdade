@@ -1,0 +1,21 @@
+package Operadores;
+
+import java.util.Scanner;
+
+public class DesafioCalculadora {
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		int valor1 = entrada.nextInt();
+		int valor2 = entrada.nextInt();
+		
+		String operacao = entrada.next();
+		
+		int soma = "+".equals(operacao) ? valor1 + valor2 : null;
+		
+		System.out.println(soma);
+		
+	}
+
+}

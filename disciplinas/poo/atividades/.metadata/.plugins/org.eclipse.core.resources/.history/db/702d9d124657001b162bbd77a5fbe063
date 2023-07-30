@@ -1,0 +1,17 @@
+package fundamentos;
+
+public class TipoStringEquals {
+	public static void main(String[] args) {
+		
+		System.out.println("2" == "2");
+		// aqui é uma forma de comparar strings mas nao e mais indicada
+		// porque esta suscetivel a erros
+		
+		String s1 = new String("2");
+		System.out.println("2" == s1);
+		// aqui vai dar falso por varias questoes internas da linguagem
+		// para corrigir isso usa-se o equals
+		System.out.println("2".equals(s1));
+	}
+
+}

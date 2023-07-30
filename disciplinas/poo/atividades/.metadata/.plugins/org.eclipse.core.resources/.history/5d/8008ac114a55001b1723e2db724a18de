@@ -1,0 +1,12 @@
+package fundamentos;
+
+public class Console {
+	
+	public static void main(String[] args) {
+		System.out.println("Boa");
+		System.out.println(" noite\n\n");
+		
+//		o print terminado em ln quebra a linha ao imprimir 
+	}
+
+}

@@ -1,0 +1,19 @@
+package exercicio1;
+
+import java.util.Scanner;
+
+public class Triangulo {
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		double base = entrada.nextDouble();
+		double altura = entrada.nextDouble();
+		
+		double area = (base * altura)/2;
+		
+		System.out.printf("%.2f",area);
+		entrada.close();
+		
+	}
+
+}
