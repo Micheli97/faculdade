@@ -1,0 +1,8 @@
+Ração Pedigree 10k;10.0;223
+Ração Pedigree 15Kg;99.9;225
+Coleira G;20.0;220
+Coleira P;12.0;222
+Ração para cavalos;10.0;226
+Ração Whiskas Sache 85g;1.87;227
+Antipulgas e Carrapatos;48.8;228
+Gaiola grande;25.9;229

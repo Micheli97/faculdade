@@ -1,0 +1,10 @@
+Vacina Antirrábica;40.0;120
+Banho;10.0;121
+Transporte;19.0;122
+Tosa;15.0;123
+Hospedagem;45.0;124
+Consulta Veterinaria;50.0;125
+Vacina V10 Cães;90.0;126
+Vacina V4 Gatos;90.0;127
+Vacina Contra Gripe Canina;85.0;129
+Vacina Contra leptospirose;72.9;130
