@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    background-image: url('./assests/codigo.jpg');
+    background-repeat: no-repeat, no-repeat center center;
+
+}
+
+
+.cardTitle {
+    height: 14%;
+    background-color: #288535;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-top: 2%;
+    border-radius: 10px;
+}
+
+.cardTitle h1 {
+    color: white;
+    text-align: center;
+    font-family: Arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cardTitle h3 {
+    padding-right: 250px;
+    padding-top: 15px;
+    text-align: end;
+    color: white;
+    font-family: Arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+
+}
+
+.navBar {
+    height: 5%;
+    background-color: #288535;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    border-radius: 10px;
+    padding: 1%;
+    padding-left: 5%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+}
+
+
+.nav-list {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-list li {
+    margin-left: 45px;
+    font-family: Arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.search {
+    margin-left: 10%;
+
+}
+
+input {
+    border-radius: 10px;
+    padding-left: 15px;
+    height: 35px;
+    border: none;
+
+}
+
+.meuSideBar {
+    margin-left: 40%;
+    color: white;
+}
+
+main {
+    height: 100%;
+}
+
+.menuOptions {
+    height: 40%;
+    display: flex;
+    background-color: white;
+    opacity: 90%;
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 5px;
+    border: 5px solid #288535;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cardMenuOptions {
+    text-align: center;
+    background-color: #288535;
+    border-radius: 10px;
+    height: 60%;
+    width: 15%;
+    margin-left: 5%;
+
+}
+
+.cardMenuOptions h3 {
+    margin-top: 30%;
+    color: white;
+    font-family: Arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cardMenuOptions h4 {
+    color: white;
+    padding-top: 5%;
+    font-family: Arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
