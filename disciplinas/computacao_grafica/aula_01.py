@@ -5,7 +5,7 @@ from OpenGL.GLU import *
 
 
 vertices = (
-    (-1, -1, 1),
+    (1, -1, -1),
     (1, 1, -1),
     (-1, 1, -1),
     (-1, -1, -1),
@@ -41,8 +41,14 @@ def cubo():
 
 def main():
     pygame.init()
-    display = (800,600)
-    pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
+
+    rosa = (255, 192, 203)
+
+    display = (800,600) # Definindo o tamanho da tela
+    pygame.display.set_mode(display, DOUBLEBUF|OPENGL) # Criando o display com o tamanho definido na variavel [display]. Os parametros [DOUBLEBUF] e [OPENGL] ativan a renderização em OpenGL.
+    pygame.display.set_caption("Aula 01") # Definindo titulo da janela
+
+    
 
     gluPerspective(45, (display[0]/display[1]),0.1, 50)
 
@@ -55,8 +61,9 @@ def main():
                 quit()
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
         cubo()
-        pygame.display.flip()
+        pygame.display.flip() # Atualizar o conteúdo da janela, mostrando o que foi renderizado desde a última atualização
         pygame.time.wait(100)
+        
 
 
 main()
