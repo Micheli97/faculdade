@@ -4,7 +4,6 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 
 
-
 def desenha_losango(x, y, posicao_vertice, color):
     glColor3f(*color)  # Define a cor do losango
     
@@ -17,7 +16,6 @@ def desenha_losango(x, y, posicao_vertice, color):
 
 def renderiza():
     glClearColor(0, 1, 0, 1)  # Fundo verde
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
     # Desenhar os quatro losangos
     desenha_losango(0.0, 0.4, 0.3, (0, 0, 1))  # Azul (superior)
