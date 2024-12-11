@@ -31,6 +31,8 @@ def main():
 
     display = (400, 400)
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
+    pygame.display.set_caption("Questão 01")
+
 
     gluOrtho2D(-1, 1, -1, 1)
 

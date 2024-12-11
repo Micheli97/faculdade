@@ -69,6 +69,8 @@ def main():
 
     display = (400, 400)
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
+    pygame.display.set_caption("Questão 02")
+
 
  
     glClearColor(255,255,0,1)
