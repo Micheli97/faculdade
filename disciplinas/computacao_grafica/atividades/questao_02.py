@@ -76,6 +76,10 @@ def main():
     glClearColor(255,255,0,1)
     gluOrtho2D(-1, 1, -1, 1)  # Define o sistema de coordenadas 2D
 
+    # Ajusta a projeção ortográfica
+    # Deixei em 2 x 2, pois quando executei o programa os desenhos ficaram muito pequenos
+    gluOrtho2D(-1, 1, -1, 1)
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

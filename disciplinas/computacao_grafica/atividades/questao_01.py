@@ -32,6 +32,8 @@ def main():
     pygame.display.set_caption("Questão 01")
 
 
+    # Ajusta a projeção ortográfica
+    # Deixei em 2 x 2, pois quando executei o programa os desenhos ficaram muito pequenos
     gluOrtho2D(-1, 1, -1, 1)
 
     while True:

@@ -5,12 +5,8 @@ from OpenGL.GLU import *
 import math
 
 def desenha_forma_personalizada(vertices, cores):
-    """
-    Desenha um polígono com um degradê de cores.
-    vertices: Lista de coordenadas (x, y) dos vértices.
-    cores: Lista de cores RGB para cada vértice.
-    """
-    glBegin(GL_LINE_LOOP)  # Apenas as linhas do polígono
+    glLineWidth(3)
+    glBegin(GL_LINE_LOOP) 
     for i, (x, y) in enumerate(vertices):
         glColor3f(*cores[i % len(cores)])  # Alterna cores
         glVertex2f(x, y)
@@ -20,18 +16,18 @@ def desenha_forma_personalizada(vertices, cores):
 def renderiza():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-    # Definição dos vértices da forma personalizada
+    # Vertices construídos no sentido anti-horário
     vertices = [
-        (0.0, 0.8),  # Ponta superior
-        (-0.13, 0.34),  # Inferior esquerdo
-        (-0.5, -0.0),  # Centro inferior
-        (0.0, 0.1),  # Inferior direito
-        (0.5, 0.0),
-        (0.1, 0.3),
+        (0.0, 0.8), # A  
+        (-0.15, 0.4), # B
+        (-0.4, 0), # C
+        (0, 0.15), # D
+        (0.4, 0.0), # E
+        (0.15, 0.4), # F
     ]
 
     # Degradê de cores para as linhas
-    cores = [(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 1, 0),(1, 1, 0)]
+    cores = [ (0, 1, 0),(1, 0, 0), (1, 0, 0), (0, 0, 139), (0, 0, 139), (0, 255, 0)]
 
     desenha_forma_personalizada(vertices, cores)
 
@@ -41,7 +37,9 @@ def main():
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
     pygame.display.set_caption("Questão 03")
 
-
+    # Ajusta a projeção ortográfica
+    # Deixei em 2 x 2, pois quando executei o programa os desenhos ficaram muito pequenos
+    gluOrtho2D(-1, 1, -1, 1)
 
     while True:
         for event in pygame.event.get():
