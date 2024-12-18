@@ -12,15 +12,25 @@ def configurar_display(largura, altura, titulo):
     gluOrtho2D(-10, 10, -10, 10)
     
     
-def criar_casas(casas_count, margem_horizontal, cores_base, cores_telhado, cores_porta):
+def criar_casas(casas_count, margem_horizontal, cores_base, cores_telhado, cores_porta, posicoes=None):
     largura_display = 20 - 2 * margem_horizontal
     largura_por_casa = largura_display / casas_count
     escala = largura_por_casa / 2
 
+    if posicoes is None:
+        # Garantindo que as casas estejam dentro dos limites visíveis
+        posicoes = [(-10 + margem_horizontal + i * largura_por_casa + largura_por_casa / 2, -5) for i in range(casas_count)]
+
     casas = []
     for i in range(casas_count):
-        posicao_x = -10 + margem_horizontal + i * largura_por_casa + largura_por_casa / 2
-        posicao_y = -5
+        # Usando as posições passadas ou calculadas
+        posicao_x, posicao_y = posicoes[i] if i < len(posicoes) else (-10 + margem_horizontal + i * largura_por_casa + largura_por_casa / 2, -5)
+
+        # Verificando se a posição está dentro do espaço visível do display
+        # Ajuste a condição para garantir que as casas não saiam da área visível
+        if posicao_x - escala < -10 or posicao_x + escala > 10 or posicao_y - escala < -10 or posicao_y + escala > 10:
+            print(f"Posição inválida para a casa {i}: ({posicao_x}, {posicao_y})")
+            continue  # Ignora a criação da casa se a posição estiver fora da área visível
 
         cor_base = cores_base[i % len(cores_base)]
         cor_telhado = cores_telhado[i % len(cores_telhado)]
@@ -34,6 +44,7 @@ def criar_casas(casas_count, margem_horizontal, cores_base, cores_telhado, cores
             cor_porta
         ))
     return casas
+
 
 def processar_eventos():
     for event in pygame.event.get():
@@ -51,23 +62,26 @@ def desenhar_casas(casas):
     pygame.display.flip()
 
 def main():
-    LARGURA_DISPLAY = 800
-    ALTURA_DISPLAY = 600
-    TITULO = "Atividade 02"
-    MARGEM_HORIZONTAL = 2
-    CASAS_COUNT = 4
+    largura_display = 800
+    altura_display = 600
+    titulo = "Atividade 02"
+    margem_horizontal = 2
+    quantidade_casas_desenhadas = 4
 
-    CORES_BASE = [(0.6, 0.3, 0.2), (0.3, 0.6, 0.8), (0.5, 0.7, 0.4), (0.7, 0.5, 0.2)]
-    CORES_TELHADO = [(0.8, 0.1, 0.1), (0.9, 0.5, 0.2), (0.7, 0.3, 0.1), (0.5, 0.1, 0.8)]
-    CORES_PORTA = [(0.0, 0.0, 0.0), (0.2, 0.1, 0.0), (0.3, 0.2, 0.1), (0.0, 0.2, 0.3)]
+    cores_base = [(0.6, 0.3, 0.2), (0.3, 0.6, 0.8), (0.5, 0.7, 0.4), (0.7, 0.5, 0.2)]
+    cores_telhado = [(0.8, 0.1, 0.1), (0.9, 0.5, 0.2), (0.7, 0.3, 0.1), (0.5, 0.1, 0.8)]
+    cores_porta = [(0.0, 0.0, 0.0), (0.2, 0.1, 0.0), (0.3, 0.2, 0.1), (0.0, 0.2, 0.3)]
+    posicoes = [(-6,-5), (-2, -5), (2, -5), (6, -5)]
 
-    configurar_display(LARGURA_DISPLAY, ALTURA_DISPLAY, TITULO)
-    casas = criar_casas(CASAS_COUNT, MARGEM_HORIZONTAL, CORES_BASE, CORES_TELHADO, CORES_PORTA)
+
+    configurar_display(largura_display, altura_display, titulo)
+    casas = criar_casas(quantidade_casas_desenhadas, margem_horizontal, cores_base, cores_telhado, cores_porta, posicoes=posicoes)
 
     while True:
         processar_eventos()
         desenhar_casas(casas)
         pygame.time.wait(10)
+
 
 if __name__ == "__main__":
     main()
