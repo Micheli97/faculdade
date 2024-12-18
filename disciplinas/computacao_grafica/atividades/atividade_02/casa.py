@@ -10,8 +10,7 @@ class Casa:
         self.cor_porta = cor_porta
 
     def desenhar_base(self):
-        """Desenha a base da casa (retângulo principal)."""
-        glColor3f(*self.cor_base)  # Define a cor da base
+        glColor3f(*self.cor_base)  
         glBegin(GL_QUADS)
         glVertex2f(-1, 0)
         glVertex2f(-1, 1)
@@ -20,30 +19,46 @@ class Casa:
         glEnd()
 
     def desenhar_telhado(self):
-        """Desenha o telhado da casa (triângulo superior)."""
-        glColor3f(*self.cor_telhado)  # Define a cor do telhado
+        glColor3f(*self.cor_telhado) 
         glBegin(GL_TRIANGLES)
-        glVertex2f(-1.2, 1)
+        glVertex2f(-1, 1)
         glVertex2f(0, 2)
-        glVertex2f(1.2, 1)
+        glVertex2f(1, 1)
         glEnd()
 
     def desenhar_porta(self):
-        """Desenha a porta no centro da casa."""
-        glColor3f(*self.cor_porta)  # Cor da porta
+        glColor3f(*self.cor_porta)  
         glBegin(GL_QUADS)
-        glVertex2f(-0.3, 0)
-        glVertex2f(-0.3, 0.6)
-        glVertex2f(0.3, 0.6)
-        glVertex2f(0.3, 0)
+        glVertex2f(-0.2, 0)
+        glVertex2f(-0.2, 0.6)
+        glVertex2f(0.2, 0.6)
+        glVertex2f(0.2, 0)
+        glEnd()
+        
+    def desenhar_janelas(self):
+        glColor3f(*self.cor_porta)
+
+        glBegin(GL_QUADS)
+        glVertex2f(-0.6, 0.3) 
+        glVertex2f(-0.6, 0.7)  
+        glVertex2f(-0.4, 0.7) 
+        glVertex2f(-0.4, 0.3) 
         glEnd()
 
+        glBegin(GL_QUADS)
+        glVertex2f(0.4, 0.3)  
+        glVertex2f(0.4, 0.7) 
+        glVertex2f(0.6, 0.7)
+        glVertex2f(0.6, 0.3) 
+        glEnd()
+        
+
     def desenhar(self):
-        """Desenha a casa completa com suas transformações."""
         glPushMatrix()
-        glTranslatef(self.pos_x, self.pos_y, 0)  # Move a casa
-        glScalef(self.escala, self.escala, 1)   # Aplica escala
+        glTranslatef(self.pos_x, self.pos_y, 0)  
+        glScalef(self.escala, self.escala, 1) 
         self.desenhar_base()
         self.desenhar_telhado()
         self.desenhar_porta()
+        self.desenhar_janelas()
         glPopMatrix()
