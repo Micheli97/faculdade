@@ -13,8 +13,8 @@ def main():
     glTranslatef(0.0, 0.0, -5)  # Translação para afastar o objeto da câmera
 
     # Pontos opostos do paralelepípedo
-    point1 = [-1, -1, -1]  # Ponto inferior esquerdo
-    point2 = [1, 1, 1]     # Ponto superior direito
+    point1 = [-2, -1, -1]  # Ponto inferior esquerdo
+    point2 = [2, 1, 1]     # Ponto superior direito
 
     # Cria o paralelepípedo
     parallelepiped = Parallelepiped(point1, point2)
